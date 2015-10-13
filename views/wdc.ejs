@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Graph Data</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/sith.css"> 
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+    <script type="text/javascript" src='https://public.tableau.com/javascripts/api/tableauwdc-1.1.0.js'></script>  
+    <script type="text/javascript" src='/js/wdc.js'></script>
+    
+</head>
+<body class='body-login'>
+	<div class="container">
+		<div class="login-container">
+			<img src="/images/stormtrooper.jpg">
+			<% if(typeof error == 'object' && error) {%>
+				<p class="bg-danger"><%= error %></p>
+			<% } %>
+			<% if(typeof success == 'object' && success) {%>
+				<p class="bg-success"><%= success %></p>
+			<% } %>
+            <div class="form-box">
+                
+                    <textarea id="query" type="text" >MATCH (t:Person {name: 'Darth Vader'})-[:CHILD_OF*0..1]-child</textarea>
+
+                    <button class="btn-info btn-block" onclick="submitQuery()">This is for quick testing, use the html page in the client folder</button>
+
+
+               
+            </div>
+        </div>
+</body>
+</html>
+    
+
